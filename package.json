@@ -1,0 +1,17 @@
+{
+  "name": "generating-og-image",
+  "version": "1.0.0",
+  "description": "Generate an OG Image",
+  "main": "dist/card.js",
+  "scripts": {
+    "build": "tsc",
+    "now-build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "author": "Shadad",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.14.25",
+    "typescript": "^4.1.3"
+  }
+}
