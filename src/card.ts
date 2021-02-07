@@ -1,6 +1,7 @@
 import { IncomingMessage, ServerResponse } from "http";
 import { parseReqs } from "./parser";
 import { getHtml } from "./template";
+import { writeTempFile } from "./file";
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   //   const cardInfo = {
@@ -14,6 +15,14 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
   try {
     const parse = parseReqs(req);
     const template = getHtml(parse);
+    const { title, author } = parse;
+
+    const fileName = [title, author].join("-");
+
+    const filePath = await writeTempFile(fileName, template);
+    const fileUrl = `file:///${filePath}`;
+    console.log(fileUrl);
+
     res.statusCode = 200;
     res.setHeader("Content-Type", "text/html");
     res.end(template);
