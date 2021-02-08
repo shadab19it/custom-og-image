@@ -5,7 +5,7 @@
   "main": "src/card.js",
   "scripts": {
     "build": "tsc",
-    "now-build": "tsc",
+    "vercel-build": "tsc",
     "watch": "tsc --watch"
   },
   "author": "Shadad",
