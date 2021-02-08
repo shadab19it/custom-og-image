@@ -1,13 +1,6 @@
 import { IncomingMessage } from "http";
 import { parse } from "url";
 
-interface ParserReqs {
-  author: string;
-  title: string;
-  image: string;
-  website: string;
-}
-
 export const parseReqs = (req: IncomingMessage) => {
   const { query = {} } = parse(req.url || "", true);
   const { author, title, image, website } = query;
