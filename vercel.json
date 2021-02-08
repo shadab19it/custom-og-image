@@ -9,5 +9,5 @@
       "config": { "maxLambdaSize": "36mb" }
     }
   ],
-  "routes": [{ "src": "/og/img", "dest": "/src/card.ts" }]
+  "routes": [{ "src": "/", "dest": "/src/card.ts" }]
 }
